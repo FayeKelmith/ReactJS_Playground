@@ -23,7 +23,21 @@ code {
   font-weight: 400;
   font-family: "Ubuntu Mono", monospace;
 }
-.people {
+.btnCounter {
   text-align: center;
+  font-size: 36px;
+}
+.btn {
+  padding: 8px 15px;
+  border-radius: 15;
+  margin: auto 20px;
+  font-size: 20px;
   color: #f9f9f9;
+  border: none;
+}
+.start {
+  background-color: #008080;
+}
+.end {
+  background-color: #ff4747;
 }

@@ -1,10 +1,8 @@
 const Header = () => {
   return (
     <header>
-      <h1 className="introduction">Tic Tac Toe</h1>
-      <p style={description}>
-        This is my first react app witht the goal of learning about states
-      </p>
+      <h1 className="introduction">Counter</h1>
+      <p style={description}>A digital counter.</p>
     </header>
   );
 };

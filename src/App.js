@@ -1,11 +1,11 @@
 import Header from "./components/Header";
-import Properties from "./components/Properties";
+import Counter from "./components/Counter";
 import "./App.css";
 function App() {
   return (
     <div>
       <Header />
-      <Properties show={false} />
+      <Counter />
     </div>
   );
 }

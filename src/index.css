@@ -41,3 +41,20 @@ code {
 .end {
   background-color: #ff4747;
 }
+table {
+  /* numbers in the middle and table at center */
+  text-align: center;
+  margin: 20px auto;
+}
+td {
+  padding: 15px 15px;
+  border: #f9f9f9 1px solid;
+  width: 2rem;
+  height: 2rem;
+}
+
+span {
+  border: #f9f9f9 1px solid;
+  padding: 8px 20px;
+  margin: 0px 15px;
+}

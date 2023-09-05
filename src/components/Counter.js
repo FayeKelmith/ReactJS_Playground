@@ -22,6 +22,7 @@ const Counter = () => {
       >
         Decrement
       </button>
+      <hr style={{ margin: "40px 0px" }} />
     </div>
   );
 };

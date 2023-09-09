@@ -1,28 +1,51 @@
+import React from "react";
 const Tictactoe = () => {
   return (
-    <div style={{ textAlign: "center", fontSize: "32px" }}>
-      <h2>Tic Tac Toe</h2>
-      <table>
-        <tr>
-          <td>1</td>
-          <td>2</td>
-          <td>3</td>
-        </tr>
-        <tr>
-          <td>4</td>
-          <td>5</td>
-          <td>6</td>
-        </tr>
-        <tr>
-          <td>7</td>
-          <td>8</td>
-          <td>9</td>
-        </tr>
-      </table>
+    <div>
       <div>
-        <span className="player player1">Player 1</span>{" "}
-        <span className="player player2">Player 2</span>
+        <Board />
+
+        <hr style={{ margin: " 50px auto", width: "40vw" }} />
+        <Player />
       </div>
+    </div>
+  );
+};
+
+//for the main board now
+const Board = () => {
+  return (
+    <div className="board">
+      <Line />
+      <Line />
+      <Line />
+    </div>
+  );
+};
+//for each row:
+const Line = () => {
+  return (
+    <div className="line">
+      <Box status="X" />
+      <Box />
+      <Box />
+    </div>
+  );
+};
+
+//defining props
+//for each box:
+const Box = ({ status }) => {
+  return <p className="box">{status}</p>;
+};
+
+//for the player buttons;
+
+const Player = () => {
+  return (
+    <div className="playerbox">
+      <span className="player player1">Player 1</span>
+      <span className="player player1">Player 2</span>
     </div>
   );
 };

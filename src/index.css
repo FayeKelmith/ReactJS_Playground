@@ -30,7 +30,6 @@ code {
 .btn {
   padding: 8px 15px;
   border-radius: 15;
-  margin: auto 20px;
   font-size: 20px;
   color: #f9f9f9;
   border: none;
@@ -41,20 +40,29 @@ code {
 .end {
   background-color: #ff4747;
 }
-table {
-  /* numbers in the middle and table at center */
+.playerbox {
   text-align: center;
-  margin: 20px auto;
 }
-td {
-  padding: 15px 15px;
-  border: #f9f9f9 1px solid;
-  width: 2rem;
-  height: 2rem;
-}
-
-span {
+.player {
   border: #f9f9f9 1px solid;
   padding: 8px 20px;
   margin: 0px 15px;
+}
+.box {
+  margin: 0;
+  color: #0e1116;
+  border: #008080 1px solid;
+  background-color: #f9f9f9;
+  width: 50px;
+  height: 50px;
+}
+.line {
+  display: flex;
+
+  width: fit-content;
+}
+.board {
+  display: grid;
+  width: fit-content;
+  margin: 0 auto;
 }

@@ -1,11 +1,10 @@
 import { useState } from "react";
+// < === fragment.
 const Tictactoe = () => {
   return (
-    <div>
-      <div>
-        <Board />
-      </div>
-    </div>
+    <>
+      <Board />
+    </>
   );
 };
 
@@ -16,6 +15,7 @@ const Board = () => {
   const [squares, setSquares] = useState(Array(9).fill(null));
   //const [active, setActive] = useState(false);
 
+  //button changing function
   const done = {
     backgroundColor: "#ff4747",
     color: "#f9f9f9",
@@ -25,6 +25,7 @@ const Board = () => {
     color: "#f9f9f9",
   };
 
+  //button manipulation
   let active = null;
   if (isNext) {
     active = done;
@@ -32,9 +33,17 @@ const Board = () => {
     active = pending;
   }
 
+  //click handling
   const handleClick = (i) => {
+    //working on winner;
     //to create a copy of the squares array:
     const nextSquares = squares.slice();
+
+    //stopping condiditon.
+    if (squares[i] || winner[squares[i]]) {
+      return;
+    }
+
     if (isNext) {
       nextSquares[i] = "X";
       setIsNext(false);
@@ -42,13 +51,22 @@ const Board = () => {
       nextSquares[i] = "O";
       setIsNext(true);
     }
+
     setSquares(nextSquares);
   };
+
+  let status;
+  const win = winner(squares);
+  if (win) {
+    status = "Winner: " + win;
+  }
   return (
     //using props we will now communicate between the super component board and the sub components box.
     <div>
       <div className="board">
+        <div className="winner">{status}</div>
         <div className="line">
+          {/*INFO: handleclick is a callback function else will be executed by js all the time without trigger.*/}
           <Box value={squares[0]} onSquareClick={() => handleClick(0)} />
           <Box value={squares[1]} onSquareClick={() => handleClick(1)} />
           <Box value={squares[2]} onSquareClick={() => handleClick(2)} />
@@ -70,9 +88,32 @@ const Board = () => {
   );
 };
 
-const Box = ({ value, onSquareClick, design }) => {
+const winner = (squares) => {
+  const lines = [
+    [0, 1, 2],
+    [3, 4, 5],
+    [6, 7, 8],
+    [0, 3, 6],
+    [1, 4, 7],
+    [2, 5, 8],
+    [0, 4, 8],
+    [2, 4, 8],
+  ];
+
+  for (let i = 0; i < lines.length; i++) {
+    let [a, b, c] = lines[i];
+
+    if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
+      return squares[a];
+    }
+  }
+
+  return null;
+};
+
+const Box = ({ value, onSquareClick }) => {
   return (
-    <p className="box" onClick={onSquareClick} style={design}>
+    <p className="box" onClick={onSquareClick}>
       {value}
     </p>
   );

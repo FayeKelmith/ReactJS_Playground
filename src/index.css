@@ -72,3 +72,11 @@ code {
 .active {
   background-color: #ff4747;
 }
+.light{
+  color: #008080;
+  background-color: #f9f9f9;
+}
+.dark{
+  color: #ff4747;
+  background-color: #f9f9f9;
+}

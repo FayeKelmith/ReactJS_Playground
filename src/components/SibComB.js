@@ -5,7 +5,13 @@ function SibComB() {
   console.log("SiblingComponentB", theme);
   return (
     <>
-      <h1 className={`${theme === "light" ? "dark" : "light"}`}>Sibling Component B</h1>
+      <h1
+        className={`${
+          theme === "light" ? "dark rounded-xl" : "light  text-xl"
+        }`}
+      >
+        Sibling Component B
+      </h1>
     </>
   );
 }

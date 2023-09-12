@@ -1,4 +1,3 @@
-import "./App.css";
 import { ThemeProvider } from "./context/Context";
 
 import SibComB from "./components/SibComB";
@@ -12,7 +11,6 @@ function App() {
       <ThemeProvider>
         <SibComB></SibComB>
         <SibComC></SibComC>
-
         <ThemeBtn />
       </ThemeProvider>
     </>

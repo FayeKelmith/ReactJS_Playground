@@ -1,4 +1,4 @@
-import { useContext } from "react";
+ import { useContext } from "react";
 import ThemeContext from "../context/Context";
 function SibComB() {
   const { theme } = useContext(ThemeContext);
